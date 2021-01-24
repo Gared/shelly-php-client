@@ -1,0 +1,4 @@
+/vendor/
+
+# Composer PHAR
+/composer.phar

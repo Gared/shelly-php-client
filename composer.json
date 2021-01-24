@@ -1,0 +1,27 @@
+{
+  "name": "gared/shelly-php-client",
+  "type": "library",
+  "description": "Client to access API of shelly devices",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Stefan Müller",
+      "email": "mu.stefan@googlemail.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "ShellyClient\\": "lib/"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.2",
+    "symfony/serializer": "^5.2",
+    "symfony/property-access": "^5.2",
+    "symfony/property-info": "^5.2",
+    "phpdocumentor/reflection-docblock": "^5.2"
+  }
+}
