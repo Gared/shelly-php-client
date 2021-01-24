@@ -1,0 +1,23 @@
+name: PHP Build & Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Validate composer.json
+      run: composer validate
+
+    - name: PHPStan
+      uses: docker://oskarstark/phpstan-ga
+      with:
+        args: analyse lib/ --level=5
