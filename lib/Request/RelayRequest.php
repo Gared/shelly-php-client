@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace ShellyClient\Request;
 
+use ShellyClient\Exception\InvalidArgumentException;
 use ShellyClient\Model\RelayResponse;
 
 class RelayRequest extends RequestAbstract
@@ -16,7 +17,7 @@ class RelayRequest extends RequestAbstract
     public function doRequest(int $relayIndex = 0, string $turn = null): void
     {
         if ($turn !== null && !in_array($turn, [self::TURN_ON, self::TURN_OFF, self::TURN_TOGGLE], true)) {
-            throw new \Exception('Invalid value for turn parameter: ' . $turn);
+            throw new InvalidArgumentException('Invalid value for turn parameter: ' . $turn);
         }
 
         $this->response = $this->client->request('GET', self::METER_ENDPOINT . '/' . $relayIndex, [
