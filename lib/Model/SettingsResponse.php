@@ -7,19 +7,38 @@ class SettingsResponse extends AbstractDefaultResponse
 {
     private int $maxPower;
 
+    private ?string $name;
+
+    private string $timezone;
+
+    private float $lat;
+
+    private float $lng;
+
+    private string $time;
+
+    private bool $tzautodetect;
+
+    private int $tzUtcOffset;
+
+    private bool $tzDst;
+
+    private bool $tzDstAuto;
+
+    private int $unixtime;
+
     private bool $ledStatusDisable;
 
     private bool $ledPowerDisable;
+
+    private ActionInfo $actions;
+
+    private Device $device;
 
     /**
      * @var RelayResponse[]
      */
     private array $relays;
-
-    /**
-     * @var MeterResponse[]
-     */
-    private array $meters;
 
     public function getMaxPower(): int
     {
@@ -68,18 +87,134 @@ class SettingsResponse extends AbstractDefaultResponse
     }
 
     /**
-     * @return MeterResponse[]
+     * @return ActionInfo
      */
-    public function getMeters(): array
+    public function getActions(): ActionInfo
     {
-        return $this->meters;
+        return $this->actions;
     }
 
     /**
-     * @param MeterResponse[] $meters
+     * @param ActionInfo $actions
      */
-    public function setMeters(array $meters): void
+    public function setActions(ActionInfo $actions): void
     {
-        $this->meters = $meters;
+        $this->actions = $actions;
+    }
+
+    /**
+     * @return Device
+     */
+    public function getDevice(): Device
+    {
+        return $this->device;
+    }
+
+    /**
+     * @param Device $device
+     */
+    public function setDevice(Device $device): void
+    {
+        $this->device = $device;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): void
+    {
+        $this->name = $name;
+    }
+
+    public function getTimezone(): string
+    {
+        return $this->timezone;
+    }
+
+    public function setTimezone(string $timezone): void
+    {
+        $this->timezone = $timezone;
+    }
+
+    public function getLat(): float
+    {
+        return $this->lat;
+    }
+
+    public function setLat(float $lat): void
+    {
+        $this->lat = $lat;
+    }
+
+    public function getLng(): float
+    {
+        return $this->lng;
+    }
+
+    public function setLng(float $lng): void
+    {
+        $this->lng = $lng;
+    }
+
+    public function getTime(): string
+    {
+        return $this->time;
+    }
+
+    public function setTime(string $time): void
+    {
+        $this->time = $time;
+    }
+
+    public function isTzautodetect(): bool
+    {
+        return $this->tzautodetect;
+    }
+
+    public function setTzautodetect(bool $tzautodetect): void
+    {
+        $this->tzautodetect = $tzautodetect;
+    }
+
+    public function getTzUtcOffset(): int
+    {
+        return $this->tzUtcOffset;
+    }
+
+    public function setTzUtcOffset(int $tzUtcOffset): void
+    {
+        $this->tzUtcOffset = $tzUtcOffset;
+    }
+
+    public function isTzDst(): bool
+    {
+        return $this->tzDst;
+    }
+
+    public function setTzDst(bool $tzDst): void
+    {
+        $this->tzDst = $tzDst;
+    }
+
+    public function isTzDstAuto(): bool
+    {
+        return $this->tzDstAuto;
+    }
+
+    public function setTzDstAuto(bool $tzDstAuto): void
+    {
+        $this->tzDstAuto = $tzDstAuto;
+    }
+
+    public function getUnixtime(): int
+    {
+        return $this->unixtime;
+    }
+
+    public function setUnixtime(int $unixtime): void
+    {
+        $this->unixtime = $unixtime;
     }
 }
