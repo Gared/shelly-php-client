@@ -15,7 +15,12 @@ composer require gared/shelly-php-client
 ### Configure client
 
 ```php
-$client = new \ShellyClient\HTTP\Client('http://192.168.1.10', 'ShellyDeviceLightA');
+$client = new \ShellyClient\HTTP\Client('http://192.168.1.10');
+```
+
+If you have configured login credentials you have to create the client like this:
+```php
+$client = new \ShellyClient\HTTP\Client('http://shellyuser:secret@192.168.1.10');
 ```
 
 ### Get current power usage
