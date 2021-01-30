@@ -39,7 +39,7 @@ class SettingsRequest extends RequestAbstract
 
     public function getSettings(): SettingsResponse
     {
-        $result = $this->response->getBody()->__toString();
+        $result = $this->getResponse()->getBody()->__toString();
 
         return $this->serializer->deserialize($result, SettingsResponse::class, 'json');
     }
