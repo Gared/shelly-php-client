@@ -1,0 +1,17 @@
+{
+  "ison": false,
+  "red": 255,
+  "green": 127,
+  "blue": 0,
+  "white": 0,
+  "gain": 100,
+  "temp": 5406,
+  "brightness": 90,
+  "effect": 0,
+  "default_state": "last",
+  "auto_on": 0,
+  "auto_off": 0,
+  "power": 0,
+  "schedule": false,
+  "schedule_rules": []
+}

@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace ShellyClient\Model\Request;
 
 use ShellyClient\Exception\InvalidArgumentException;
+use ShellyClient\Model\Response\SettingsLightResponse;
 
 class SettingsLightRequest extends RequestAbstract implements RequestInterface
 {
