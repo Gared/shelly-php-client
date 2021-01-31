@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace ShellyClient\Model;
+namespace ShellyClient\Model\Response;
 
-class ActionsResponse extends AbstractDefaultResponse
+class SettingsActionsResponse extends AbstractDefaultResponse
 {
     private UrlActions $urlActions;
 

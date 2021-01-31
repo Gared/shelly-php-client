@@ -1,7 +1,7 @@
 {
   "name": "gared/shelly-php-client",
   "type": "library",
-  "description": "Client to access API of shelly devices",
+  "description": "Client to access HTTP API of shelly devices",
   "license": "MIT",
   "authors": [
     {

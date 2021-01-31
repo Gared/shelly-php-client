@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace ShellyClientTest\Model;
+namespace ShellyClientTest\Model\Response;
 
 use PHPUnit\Framework\TestCase;
-use ShellyClient\Model\SettingsResponse;
+use ShellyClient\Model\Response\SettingsResponse;
 
 class SettingsResponseTest extends TestCase
 {

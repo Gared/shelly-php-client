@@ -4,16 +4,19 @@ declare(strict_types=1);
 namespace ShellyClient\HTTP;
 
 use GuzzleHttp\ClientInterface;
-use ShellyClient\Model\ActionsResponse;
-use ShellyClient\Model\MeterResponse;
-use ShellyClient\Model\RelayResponse;
-use ShellyClient\Model\SettingsResponse;
-use ShellyClient\Model\StatusResponse;
-use ShellyClient\Request\ActionsRequest;
-use ShellyClient\Request\MeterRequest;
-use ShellyClient\Request\RelayRequest;
-use ShellyClient\Request\SettingsRequest;
-use ShellyClient\Request\StatusRequest;
+use ShellyClient\Model\Request\SettingsActionsRequest;
+use ShellyClient\Model\Response\SettingsActionsResponse;
+use ShellyClient\Model\Response\LightResponse;
+use ShellyClient\Model\Response\MeterResponse;
+use ShellyClient\Model\Response\RelayResponse;
+use ShellyClient\Model\Request\LightRequest;
+use ShellyClient\Model\Request\MeterRequest;
+use ShellyClient\Model\Request\RelayRequest;
+use ShellyClient\Model\Request\RequestInterface;
+use ShellyClient\Model\Request\SettingsRequest;
+use ShellyClient\Model\Request\StatusRequest;
+use ShellyClient\Model\Response\SettingsResponse;
+use ShellyClient\Model\Response\StatusResponse;
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
@@ -53,39 +56,41 @@ class Client
         return $this->httpClient;
     }
 
-    public function getSettings(int $maxPower = null, bool $ledStatusDisable = null, bool $ledPowerDisable = null, array $actions = []): SettingsResponse
+    public function getSettings(SettingsRequest $request): SettingsResponse
     {
-        $settingsService = new SettingsRequest($this->getHttpClient(), $this->getSerializer());
-        $settingsService->doRequest($maxPower, $ledStatusDisable, $ledPowerDisable, $actions);
-        return $settingsService->getSettings();
+        return $this->executeRequest($request);
     }
 
-    public function getMeter(int $meterIndex = 0): MeterResponse
+    public function getMeter(MeterRequest $request): MeterResponse
     {
-        $meterService = new MeterRequest($this->getHttpClient(), $this->getSerializer());
-        $meterService->doRequest($meterIndex);
-        return $meterService->getMeter();
+        return $this->executeRequest($request);
     }
 
-    public function getRelay(int $relayIndex = 0, string $turn = null): RelayResponse
+    public function getRelay(RelayRequest $request): RelayResponse
     {
-        $relayService = new RelayRequest($this->getHttpClient(), $this->getSerializer());
-        $relayService->doRequest($relayIndex, $turn);
-        return $relayService->getRelay();
+        return $this->executeRequest($request);
     }
 
-    public function getStatus(): StatusResponse
+    public function getStatus(StatusRequest $request): StatusResponse
     {
-        $statusService = new StatusRequest($this->getHttpClient(), $this->getSerializer());
-        $statusService->doRequest();
-        return $statusService->getStatus();
+        return $this->executeRequest($request);
     }
 
-    public function getActions(): ActionsResponse
+    public function getActions(SettingsActionsRequest $request): SettingsActionsResponse
     {
-        $actionsService = new ActionsRequest($this->getHttpClient(), $this->getSerializer());
-        $actionsService->doRequest();
-        return $actionsService->getActions();
+        return $this->executeRequest($request);
+    }
+
+    public function getLight(LightRequest $request): LightResponse
+    {
+        return $this->executeRequest($request);
+    }
+
+    protected function executeRequest(RequestInterface $request)
+    {
+        $requestService = new RequestService($this->getHttpClient(), $this->getSerializer());
+        $requestService->doRequest($request);
+        return $requestService->getResponseSerialized();
     }
 
     protected function createDefaultHttpClient(): ClientInterface
