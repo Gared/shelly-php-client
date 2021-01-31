@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace ShellyClient\Model\Request;
 
+use ShellyClient\Model\Response\SettingsLightResponse;
+
 class SettingsActionsRequest extends RequestAbstract implements RequestInterface
 {
     private ?int $index = null;
