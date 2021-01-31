@@ -3,12 +3,13 @@ declare(strict_types=1);
 
 namespace ShellyClient\HTTP;
 
-use ShellyClient\Model\Response\SettingsActionsResponse;
+use ShellyClient\Model\Request\RequestInterface;
 use ShellyClient\Model\Response\LightResponse;
 use ShellyClient\Model\Response\MeterResponse;
-use ShellyClient\Model\Request\RequestInterface;
 use ShellyClient\Model\Response\RelayResponse;
 use ShellyClient\Model\Response\ResponseInterface;
+use ShellyClient\Model\Response\SettingsActionsResponse;
+use ShellyClient\Model\Response\SettingsLightResponse;
 use ShellyClient\Model\Response\SettingsResponse;
 use ShellyClient\Model\Response\StatusResponse;
 
@@ -23,7 +24,7 @@ class RequestService extends RequestAbstract
     }
 
     /**
-     * @return ResponseInterface|LightResponse|SettingsResponse|MeterResponse|StatusResponse|RelayResponse|SettingsActionsResponse
+     * @return ResponseInterface|LightResponse|SettingsResponse|MeterResponse|StatusResponse|RelayResponse|SettingsActionsResponse|SettingsLightResponse
      */
     public function getResponseSerialized(): ResponseInterface
     {

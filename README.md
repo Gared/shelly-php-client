@@ -68,10 +68,12 @@ $deviceNameDeviceB = $clientLightB->getDeviceName();
 * You need at least PHP 7.4
 
 ## Supported APIs
-| API                | Code                    |
-| -------------------|-------------------------|
-| /settings          | $client->getSettings(); |
-| /settings/actions  | $client->getActions();  |
-| /status            | $client->getStatus();   |
-| /meter             | $client->getMeter();    |
-| /relay             | $client->getRelay();    |
+| API                | Code                          |
+| -------------------|-------------------------------|
+| /light             | $client->getLight();          |
+| /meter             | $client->getMeter();          |
+| /relay             | $client->getRelay();          |
+| /settings          | $client->getSettings();       |
+| /settings/actions  | $client->getActions();        |
+| /settings/lights   | $client->getSettingsLight();  |
+| /status            | $client->getStatus();         |

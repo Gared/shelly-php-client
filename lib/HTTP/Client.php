@@ -5,6 +5,7 @@ namespace ShellyClient\HTTP;
 
 use GuzzleHttp\ClientInterface;
 use ShellyClient\Model\Request\SettingsActionsRequest;
+use ShellyClient\Model\Request\SettingsLightRequest;
 use ShellyClient\Model\Response\SettingsActionsResponse;
 use ShellyClient\Model\Response\LightResponse;
 use ShellyClient\Model\Response\MeterResponse;
@@ -15,6 +16,7 @@ use ShellyClient\Model\Request\RelayRequest;
 use ShellyClient\Model\Request\RequestInterface;
 use ShellyClient\Model\Request\SettingsRequest;
 use ShellyClient\Model\Request\StatusRequest;
+use ShellyClient\Model\Response\SettingsLightResponse;
 use ShellyClient\Model\Response\SettingsResponse;
 use ShellyClient\Model\Response\StatusResponse;
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
@@ -77,6 +79,11 @@ class Client
     }
 
     public function getActions(SettingsActionsRequest $request): SettingsActionsResponse
+    {
+        return $this->executeRequest($request);
+    }
+
+    public function getSettingsLight(SettingsLightRequest $request): SettingsLightResponse
     {
         return $this->executeRequest($request);
     }
