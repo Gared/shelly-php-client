@@ -8,7 +8,6 @@ use PHPUnit\Framework\TestCase;
 use ShellyClient\HTTP\Client;
 use ShellyClient\HTTP\RequestService;
 use ShellyClient\Model\Request\SettingsLightRequest;
-use ShellyClient\Model\Request\SettingsRequest;
 use ShellyClient\Model\Response\SettingsLightResponse;
 use ShellyClientTest\Mock\HTTP\ClientMock;
 
