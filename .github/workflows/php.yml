@@ -31,11 +31,11 @@ jobs:
       run: composer install --prefer-dist --no-progress --no-suggest
 
     - name: PHPUnit tests
-      uses: php-actions/phpunit@v1
+      uses: php-actions/phpunit@v2
       with:
         configuration: phpunit.xml
         php_version: 7.4
-        phpunit_version: 9
+        version: 9
 
     - name: PHPStan
       uses: docker://oskarstark/phpstan-ga
