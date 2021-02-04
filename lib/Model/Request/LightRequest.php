@@ -31,6 +31,9 @@ class LightRequest extends RequestAbstract implements RequestInterface
     private ?int $green = null;
     private ?int $blue = null;
     private ?int $white = null;
+    private ?int $gain = null;
+    private ?int $temp = null;
+    private ?int $brightness = null;
 
     public function getLightIndex(): int
     {
@@ -51,7 +54,7 @@ class LightRequest extends RequestAbstract implements RequestInterface
     public function setMode(?string $mode): LightRequest
     {
         if ($mode !== null && !in_array($mode, [self::MODE_COLOR, self::MODE_WHITE], true)) {
-            throw new InvalidArgumentException('Invalid value for turn parameter: ' . $mode);
+            throw new InvalidArgumentException('Invalid value for mode parameter: ' . $mode);
         }
 
         $this->mode = $mode;
@@ -81,7 +84,7 @@ class LightRequest extends RequestAbstract implements RequestInterface
     public function setEffect(?int $effect): LightRequest
     {
         if ($effect !== null && ($effect < 0 || $effect > 6)) {
-            throw new InvalidArgumentException('Invalid value for turn parameter: ' . $effect);
+            throw new InvalidArgumentException('Invalid value for effect parameter: ' . $effect);
         }
 
         $this->effect = $effect;
@@ -96,7 +99,7 @@ class LightRequest extends RequestAbstract implements RequestInterface
     public function setRed(?int $red): LightRequest
     {
         if ($red !== null && ($red < 0 || $red > 255)) {
-            throw new InvalidArgumentException('Invalid value for turn parameter: ' . $red);
+            throw new InvalidArgumentException('Invalid value for red parameter: ' . $red);
         }
 
         $this->red = $red;
@@ -111,7 +114,7 @@ class LightRequest extends RequestAbstract implements RequestInterface
     public function setGreen(?int $green): LightRequest
     {
         if ($green !== null && ($green < 0 || $green > 255)) {
-            throw new InvalidArgumentException('Invalid value for turn parameter: ' . $green);
+            throw new InvalidArgumentException('Invalid value for green parameter: ' . $green);
         }
 
         $this->green = $green;
@@ -126,7 +129,7 @@ class LightRequest extends RequestAbstract implements RequestInterface
     public function setBlue(?int $blue): LightRequest
     {
         if ($blue !== null && ($blue < 0 || $blue > 255)) {
-            throw new InvalidArgumentException('Invalid value for turn parameter: ' . $blue);
+            throw new InvalidArgumentException('Invalid value for blue parameter: ' . $blue);
         }
 
         $this->blue = $blue;
@@ -142,6 +145,36 @@ class LightRequest extends RequestAbstract implements RequestInterface
     {
         $this->white = $white;
         return $this;
+    }
+
+    public function getGain(): ?int
+    {
+        return $this->gain;
+    }
+
+    public function setGain(?int $gain): void
+    {
+        $this->gain = $gain;
+    }
+
+    public function getTemp(): ?int
+    {
+        return $this->temp;
+    }
+
+    public function setTemp(?int $temp): void
+    {
+        $this->temp = $temp;
+    }
+
+    public function getBrightness(): ?int
+    {
+        return $this->brightness;
+    }
+
+    public function setBrightness(?int $brightness): void
+    {
+        $this->brightness = $brightness;
     }
 
     public function getQueryParameters(): array

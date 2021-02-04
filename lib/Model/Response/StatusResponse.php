@@ -34,6 +34,11 @@ class StatusResponse extends AbstractDefaultResponse
      */
     private array $relays;
 
+    /**
+     * @var MeterResponse[]
+     */
+    private array $meters;
+
     public function getTemperature(): float
     {
         return $this->temperature;
@@ -65,6 +70,27 @@ class StatusResponse extends AbstractDefaultResponse
     public function getRelay(int $index = 0): RelayResponse
     {
         return $this->relays[$index];
+    }
+
+    /**
+     * @return MeterResponse[]
+     */
+    public function getMeters(): array
+    {
+        return $this->meters;
+    }
+
+    public function getMeter(int $index = 0): MeterResponse
+    {
+        return $this->meters[$index];
+    }
+
+    /**
+     * @param MeterResponse[] $meters
+     */
+    public function setMeters(array $meters): void
+    {
+        $this->meters = $meters;
     }
 
     /**

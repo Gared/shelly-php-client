@@ -3,14 +3,19 @@ declare(strict_types=1);
 
 namespace ShellyClient\Model\Request;
 
+use ShellyClient\Exception\InvalidArgumentException;
 use ShellyClient\Model\Response\SettingsResponse;
 
 class SettingsRequest extends RequestAbstract implements RequestInterface
 {
+    public const MODE_WHITE = 'white';
+    public const MODE_COLOR = 'color';
+
     private ?int $maxPower = null;
     private ?bool $ledStatusDisable = null;
     private ?bool $ledPowerDisable = null;
     private ?array $actions = null;
+    private ?string $mode = null;
 
     public function getMaxPower(): ?int
     {
@@ -53,6 +58,20 @@ class SettingsRequest extends RequestAbstract implements RequestInterface
     public function setActions(array $actions): void
     {
         $this->actions = $actions;
+    }
+
+    public function getMode(): ?string
+    {
+        return $this->mode;
+    }
+
+    public function setMode(?string $mode): void
+    {
+        if ($mode !== null && !in_array($mode, [self::MODE_COLOR, self::MODE_WHITE], true)) {
+            throw new InvalidArgumentException('Invalid value for mode parameter: ' . $mode);
+        }
+
+        $this->mode = $mode;
     }
 
     public function getQueryParameters(): array
