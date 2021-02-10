@@ -32,6 +32,7 @@ class StatusRequestTest extends AbstractRequestTest
         $status = $this->requestService->getResponseSerialized();
 
         self::assertSame(true, $status->getLight()->isOn());
+        self::assertSame(50, $status->getLight()->getBrightness());
     }
 
     public function requestParametersDataProvider(): array

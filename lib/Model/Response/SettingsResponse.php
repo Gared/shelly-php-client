@@ -36,6 +36,11 @@ class SettingsResponse extends AbstractDefaultResponse
     private Device $device;
 
     /**
+     * @var LightResponse[]
+     */
+    private array $lights;
+
+    /**
      * @var RelayResponse[]
      */
     private array $relays;
@@ -84,6 +89,27 @@ class SettingsResponse extends AbstractDefaultResponse
     public function setRelays(array $relays): void
     {
         $this->relays = $relays;
+    }
+
+    /**
+     * @return LightResponse[]
+     */
+    public function getLights(): array
+    {
+        return $this->lights;
+    }
+
+    public function getLight(int $index = 0): LightResponse
+    {
+        return $this->lights[$index];
+    }
+
+    /**
+     * @param LightResponse[] $lights
+     */
+    public function setLights(array $lights): void
+    {
+        $this->lights = $lights;
     }
 
     /**

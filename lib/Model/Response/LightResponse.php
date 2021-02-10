@@ -15,6 +15,22 @@ class LightResponse extends AbstractDefaultResponse
 
     private int $timerRemaining;
 
+    private int $brightness;
+
+    private int $effect;
+
+    private int $temp;
+
+    private int $gain;
+
+    private int $white;
+
+    private int $red;
+
+    private int $blue;
+
+    private int $green;
+
     public function isOn(): bool
     {
         return $this->isOn;
@@ -63,5 +79,85 @@ class LightResponse extends AbstractDefaultResponse
     public function setTimerRemaining(int $timerRemaining): void
     {
         $this->timerRemaining = $timerRemaining;
+    }
+
+    public function getBrightness(): int
+    {
+        return $this->brightness;
+    }
+
+    public function setBrightness(int $brightness): void
+    {
+        $this->brightness = $brightness;
+    }
+
+    public function getEffect(): int
+    {
+        return $this->effect;
+    }
+
+    public function setEffect(int $effect): void
+    {
+        $this->effect = $effect;
+    }
+
+    public function getTemp(): int
+    {
+        return $this->temp;
+    }
+
+    public function setTemp(int $temp): void
+    {
+        $this->temp = $temp;
+    }
+
+    public function getGain(): int
+    {
+        return $this->gain;
+    }
+
+    public function setGain(int $gain): void
+    {
+        $this->gain = $gain;
+    }
+
+    public function getWhite(): int
+    {
+        return $this->white;
+    }
+
+    public function setWhite(int $white): void
+    {
+        $this->white = $white;
+    }
+
+    public function getRed(): int
+    {
+        return $this->red;
+    }
+
+    public function setRed(int $red): void
+    {
+        $this->red = $red;
+    }
+
+    public function getBlue(): int
+    {
+        return $this->blue;
+    }
+
+    public function setBlue(int $blue): void
+    {
+        $this->blue = $blue;
+    }
+
+    public function getGreen(): int
+    {
+        return $this->green;
+    }
+
+    public function setGreen(int $green): void
+    {
+        $this->green = $green;
     }
 }
