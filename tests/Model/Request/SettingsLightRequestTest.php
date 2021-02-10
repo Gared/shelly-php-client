@@ -4,33 +4,11 @@ declare(strict_types=1);
 namespace ShellyClientTest\Model\Request;
 
 use GuzzleHttp\Psr7\Response;
-use PHPUnit\Framework\TestCase;
-use ShellyClient\HTTP\Client;
-use ShellyClient\HTTP\RequestService;
 use ShellyClient\Model\Request\SettingsLightRequest;
 use ShellyClient\Model\Response\SettingsLightResponse;
-use ShellyClientTest\Mock\HTTP\ClientMock;
 
-class SettingsLightRequestTest extends TestCase
+class SettingsLightRequestTest extends AbstractRequestTest
 {
-    private static Client $client;
-
-    private RequestService $requestService;
-
-    public static function setUpBeforeClass(): void
-    {
-        self::$client = new ClientMock('');
-    }
-
-    protected function setUp(): void
-    {
-        $this->requestService = $this
-            ->getMockBuilder(RequestService::class)
-            ->setMethods(['getResponse', 'getRequest'])
-            ->setConstructorArgs([self::$client->getHttpClient(), self::$client->getSerializer()])
-            ->getMock();
-    }
-
     public function simpleDataProvider(): array
     {
         return [

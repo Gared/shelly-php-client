@@ -35,6 +35,11 @@ class StatusResponse extends AbstractDefaultResponse
     private array $relays;
 
     /**
+     * @var LightResponse[]
+     */
+    private array $lights;
+
+    /**
      * @var MeterResponse[]
      */
     private array $meters;
@@ -70,6 +75,27 @@ class StatusResponse extends AbstractDefaultResponse
     public function getRelay(int $index = 0): RelayResponse
     {
         return $this->relays[$index];
+    }
+
+    /**
+     * @return LightResponse[]
+     */
+    public function getLights(): array
+    {
+        return $this->lights;
+    }
+
+    public function getLight(int $index = 0): LightResponse
+    {
+        return $this->lights[$index];
+    }
+
+    /**
+     * @param LightResponse[] $lights
+     */
+    public function setLights(array $lights): void
+    {
+        $this->lights = $lights;
     }
 
     /**
