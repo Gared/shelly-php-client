@@ -104,6 +104,8 @@ class Client
     {
         return new \GuzzleHttp\Client([
             'base_uri' => $this->baseUrl,
+            'timeout' => 5,
+            'connect_timeout' => 5,
         ]);
     }
 
