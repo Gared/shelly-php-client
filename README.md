@@ -66,7 +66,7 @@ $power = $clientLightB->getMeter(new \ShellyClient\Model\Request\MeterRequest())
 // Get device name set above in construct
 $deviceNameDeviceB = $clientLightB->getDeviceName();
 // or use device name set in shelly device
-$deviceNameShelly = $clientLightB->getSettings(new \ShellyClient\Model\Request\SettingsRequest())->getDevice();
+$deviceNameShelly = $clientLightB->getSettings(new \ShellyClient\Model\Request\SettingsRequest())->getName();
 ```
 
 ## Supported Platforms
