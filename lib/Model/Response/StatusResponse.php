@@ -74,9 +74,9 @@ class StatusResponse extends AbstractDefaultResponse
         return $this->relays;
     }
 
-    public function getRelay(int $index = 0): RelayResponse
+    public function getRelay(int $index = 0): ?RelayResponse
     {
-        return $this->relays[$index];
+        return $this->relays[$index] ?? null;
     }
 
     /**
