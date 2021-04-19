@@ -29,6 +29,8 @@ class StatusResponse extends AbstractDefaultResponse
 
     private bool $overTemperature;
 
+    private Update $update;
+
     /**
      * @var RelayResponse[]
      */
@@ -125,6 +127,19 @@ class StatusResponse extends AbstractDefaultResponse
     public function setRelays(array $relays): void
     {
         $this->relays = $relays;
+    }
+
+    public function getUpdate(): Update
+    {
+        return $this->update;
+    }
+
+    /**
+     * @param Update $update
+     */
+    public function setUpdate(Update $update): void
+    {
+        $this->update = $update;
     }
 
     public function getTime(): string
