@@ -124,4 +124,9 @@ class Client
     {
         return $this->deviceName;
     }
+
+    public function getBaseUrl(): string
+    {
+        return $this->baseUrl;
+    }
 }
