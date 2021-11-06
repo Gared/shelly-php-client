@@ -39,7 +39,7 @@ class SettingsRequestTest extends AbstractRequestTest
         self::assertSame('PC', $settings->getName());
         self::assertSame($expectedType, $settings->getDevice()->getType());
 
-        self::assertIsArray($settings->getRelays());
+        self::assertNotEmpty($settings->getRelays());
         self::assertCount($settings->getDevice()->getNumOutputs(), $settings->getRelays());
     }
 
