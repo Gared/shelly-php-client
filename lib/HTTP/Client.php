@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace ShellyClient\HTTP;
 
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\RequestOptions;
 use ShellyClient\Model\Request\SettingsActionsRequest;
 use ShellyClient\Model\Request\SettingsLightRequest;
 use ShellyClient\Model\Response\SettingsActionsResponse;
@@ -29,11 +30,7 @@ use Symfony\Component\Serializer\SerializerInterface;
 class Client
 {
     private ClientInterface $httpClient;
-
-    private SerializerInterface $serializer;
-
     private string $baseUrl;
-
     private ?string $deviceName;
 
     /**
@@ -45,7 +42,7 @@ class Client
     {
         $this->baseUrl = $baseUrl;
         $this->deviceName = $deviceName;
-        $this->serializer = $this->getSerializer();
+
         if ($client === null) {
             $this->httpClient = $this->createDefaultHttpClient();
         } else {
@@ -104,8 +101,8 @@ class Client
     {
         return new \GuzzleHttp\Client([
             'base_uri' => $this->baseUrl,
-            'timeout' => 5,
-            'connect_timeout' => 5,
+            RequestOptions::TIMEOUT => 5,
+            RequestOptions::CONNECT_TIMEOUT => 5,
         ]);
     }
 

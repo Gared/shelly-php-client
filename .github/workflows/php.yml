@@ -37,7 +37,5 @@ jobs:
         php_version: 7.4
         version: 9
 
-    - name: PHPStan
-      uses: docker://oskarstark/phpstan-ga
-      with:
-        args: analyse lib/ --level=5
+    - name: Run PHPStan
+      run: vendor/bin/phpstan
