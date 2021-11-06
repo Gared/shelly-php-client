@@ -11,8 +11,8 @@ class LightRequest extends RequestAbstract implements RequestInterface
     public const EFFECT_OFF = 0;
     public const EFFECT_METEOR_SHOWER = 1;
     public const EFFECT_GRADUAL_CHANGE = 2;
-    public const EFFECT_BREATH = 3;
-    public const EFFECT_FLASH = 4;
+    public const EFFECT_FLASH = 3;
+    public const EFFECT_BREATH = 4;
     public const EFFECT_ON_OFF_GRADUAL = 5;
     public const EFFECT_RED_GREEN_CHANGE = 6;
 
