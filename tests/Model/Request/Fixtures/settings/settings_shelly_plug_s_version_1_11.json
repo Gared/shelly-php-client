@@ -1,0 +1,117 @@
+{
+  "device": {
+    "type": "SHPLG-S",
+    "mac": "24A160203491",
+    "hostname": "shellyplug-s-30911A",
+    "num_outputs": 1,
+    "num_meters": 1
+  },
+  "wifi_ap": {
+    "enabled": false,
+    "ssid": "shellyplug-s-30911A",
+    "key": ""
+  },
+  "wifi_sta": {
+    "enabled": true,
+    "ssid": "Test",
+    "ipv4_method": "dhcp",
+    "ip": null,
+    "gw": null,
+    "mask": null,
+    "dns": null
+  },
+  "wifi_sta1": {
+    "enabled": false,
+    "ssid": null,
+    "ipv4_method": "dhcp",
+    "ip": null,
+    "gw": null,
+    "mask": null,
+    "dns": null
+  },
+  "ap_roaming": {
+    "enabled": false,
+    "threshold": -70
+  },
+  "mqtt": {
+    "enable": false,
+    "server": "192.168.33.3:1883",
+    "user": "",
+    "id": "shellyplug-s-30911A",
+    "reconnect_timeout_max": 60.000000,
+    "reconnect_timeout_min": 2.000000,
+    "clean_session": true,
+    "keep_alive": 60,
+    "max_qos": 0,
+    "retain": false,
+    "update_period": 30
+  },
+  "coiot": {
+    "enabled": true,
+    "update_period": 15,
+    "peer": ""
+  },
+  "sntp": {
+    "server": "192.168.33.1",
+    "enabled": true
+  },
+  "login": {
+    "enabled": true,
+    "unprotected": false,
+    "username": "test"
+  },
+  "pin_code": "",
+  "name": "PC",
+  "fw": "20210909-145347/v1.11.4-DNSfix-ge6b2f6d",
+  "discoverable": false,
+  "build_info": {
+    "build_id": "20210909-145347/v1.11.4-DNSfix-ge6b2f6d",
+    "build_timestamp": "2021-09-09T14:53:47Z",
+    "build_version": "1.0"
+  },
+  "cloud": {
+    "enabled": false,
+    "connected": false
+  },
+  "timezone": null,
+  "lat": 500.000000,
+  "lng": 500.000000,
+  "tzautodetect": true,
+  "tz_utc_offset": 0,
+  "tz_dst": false,
+  "tz_dst_auto": true,
+  "time": "",
+  "unixtime": 0,
+  "led_status_disable": true,
+  "debug_enable": false,
+  "allow_cross_origin": false,
+  "actions": {
+    "active": false,
+    "names": [
+      "btn_on_url",
+      "out_on_url",
+      "out_off_url"
+    ]
+  },
+  "hwinfo": {
+    "hw_revision": "prod-190516",
+    "batch_id": 1
+  },
+  "max_power": 2500,
+  "led_status_disable": true,
+  "led_power_disable": true,
+  "relays": [
+    {
+      "name": null,
+      "appliance_type": "General",
+      "ison": true,
+      "has_timer": false,
+      "default_state": "off",
+      "auto_on": 0.00,
+      "auto_off": 0.00,
+      "schedule": false,
+      "schedule_rules": [],
+      "max_power": 2500
+    }
+  ]
+}

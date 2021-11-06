@@ -9,7 +9,7 @@ class SettingsResponse extends AbstractDefaultResponse
 
     private ?string $name;
 
-    private string $timezone;
+    private ?string $timezone;
 
     private float $lat;
 
@@ -154,12 +154,12 @@ class SettingsResponse extends AbstractDefaultResponse
         $this->name = $name;
     }
 
-    public function getTimezone(): string
+    public function getTimezone(): ?string
     {
         return $this->timezone;
     }
 
-    public function setTimezone(string $timezone): void
+    public function setTimezone(?string $timezone): void
     {
         $this->timezone = $timezone;
     }

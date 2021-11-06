@@ -37,6 +37,10 @@ class SettingsRequestTest extends TestCase
                 __DIR__ . '/Fixtures/settings/settings_shelly_plug_s.json',
                 'SHPLG-S',
             ],
+            [
+                __DIR__ . '/Fixtures/settings/settings_shelly_plug_s_version_1_11.json',
+                'SHPLG-S',
+            ],
         ];
     }
 
