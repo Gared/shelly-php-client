@@ -8,7 +8,7 @@ use ShellyClient\Model\Request\LightRequest;
 
 class LightRequestTest extends TestCase
 {
-    public function requestParametersDataProvider(): array
+    public static function requestParametersDataProvider(): array
     {
         $requestClean = new LightRequest();
 

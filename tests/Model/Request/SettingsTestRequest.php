@@ -7,9 +7,9 @@ use GuzzleHttp\Psr7\Response;
 use ShellyClient\Model\Request\SettingsRequest;
 use ShellyClient\Model\Response\SettingsResponse;
 
-class SettingsRequestTest extends AbstractRequestTest
+class SettingsTestRequest extends AbstractTestRequest
 {
-    public function simpleDataProvider(): array
+    public static function simpleDataProvider(): array
     {
         return [
             [
@@ -43,7 +43,7 @@ class SettingsRequestTest extends AbstractRequestTest
         self::assertCount($settings->getDevice()->getNumOutputs(), $settings->getRelays());
     }
 
-    public function requestParametersDataProvider(): array
+    public static function requestParametersDataProvider(): array
     {
         $requestClean = new SettingsRequest();
 

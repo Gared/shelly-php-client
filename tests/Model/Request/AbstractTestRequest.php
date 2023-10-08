@@ -8,7 +8,7 @@ use PHPUnit\Framework\TestCase;
 use ShellyClient\HTTP\RequestService;
 use ShellyClientTest\Mock\HTTP\ClientMock;
 
-abstract class AbstractRequestTest extends TestCase
+abstract class AbstractTestRequest extends TestCase
 {
     protected static ClientMock $client;
     /**

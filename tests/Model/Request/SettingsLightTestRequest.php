@@ -7,9 +7,9 @@ use GuzzleHttp\Psr7\Response;
 use ShellyClient\Model\Request\SettingsLightRequest;
 use ShellyClient\Model\Response\SettingsLightResponse;
 
-class SettingsLightRequestTest extends AbstractRequestTest
+class SettingsLightTestRequest extends AbstractTestRequest
 {
-    public function simpleDataProvider(): array
+    public static function simpleDataProvider(): array
     {
         return [
             [
@@ -36,7 +36,7 @@ class SettingsLightRequestTest extends AbstractRequestTest
         self::assertSame(0, $settingsLight->getPower());
     }
 
-    public function requestParametersDataProvider(): array
+    public static function requestParametersDataProvider(): array
     {
         $requestClean = new SettingsLightRequest();
 

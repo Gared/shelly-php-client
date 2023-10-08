@@ -10,7 +10,7 @@ use ShellyClient\Model\Response\SettingsResponse;
 
 class SettingsResponseTest extends TestCase
 {
-    public function sunsetDataProvider(): array
+    public static function sunsetDataProvider(): array
     {
         $sunsetDateTime = new DateTime('2021-01-20 16:56:29', new DateTimeZone('Europe/Berlin'));
 

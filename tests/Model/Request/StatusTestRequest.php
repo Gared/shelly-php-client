@@ -7,9 +7,9 @@ use GuzzleHttp\Psr7\Response;
 use ShellyClient\Model\Request\StatusRequest;
 use ShellyClient\Model\Response\StatusResponse;
 
-class StatusRequestTest extends AbstractRequestTest
+class StatusTestRequest extends AbstractTestRequest
 {
-    public function simpleDataProvider(): array
+    public static function simpleDataProvider(): array
     {
         return [
             [
@@ -35,7 +35,7 @@ class StatusRequestTest extends AbstractRequestTest
         self::assertSame(50, $status->getLight()->getBrightness());
     }
 
-    public function requestParametersDataProvider(): array
+    public static function requestParametersDataProvider(): array
     {
         $requestClean = new StatusRequest();
 
