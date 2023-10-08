@@ -71,7 +71,7 @@ $deviceNameShelly = $clientLightB->getSettings(new \ShellyClient\Model\Request\S
 
 ## Supported Platforms
 
-* You need at least PHP 7.4
+* You need at least PHP 8.1
 
 ## Supported APIs
 | API                | Code                          |
