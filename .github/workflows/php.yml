@@ -34,7 +34,7 @@ jobs:
       uses: php-actions/phpunit@v2
       with:
         configuration: phpunit.xml
-        php_version: 7.4
+        php_version: 8.1
         version: 9
 
     - name: Run PHPStan
