@@ -186,7 +186,7 @@ class SettingsResponse extends AbstractDefaultResponse
 
     public function getSunsetUnixTime(): int
     {
-        return date_sunset($this->getUnixtime(), SUNFUNCS_RET_TIMESTAMP, $this->getLat(), $this->getLng());
+        return date_sun_info($this->getUnixtime(), $this->getLat(), $this->getLng())['sunset'];
     }
 
     public function getSecondsToSunset(): int
