@@ -1,4 +1,6 @@
 /vendor/
 
-# Composer PHAR
+.phpunit.result.cache
+
 /composer.phar
+/composer.lock
